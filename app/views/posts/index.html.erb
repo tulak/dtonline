@@ -1,5 +1,5 @@
 <div class="container">
-  <%if @posts.nil? %>
+  <%if @posts.empty? %>
   <p>Nic na zobrazenie</p>
   <%else%>
   <div class="title">
@@ -17,7 +17,7 @@
 
      </div>
      <div class="boxcase">
-       <% if @show.all[1..-1].nil? %>
+       <% if @show.all[1..-1].empty? %>
        <p></p>
        <%else%>
        <% @show = @show.all[1..-1] %>
@@ -34,7 +34,7 @@
   <div class="col-xs-12 col-md-8 ">
 
 
-    <% if @posts.all[5..-1].nil? %>
+    <% if @posts.all[5..-1].empty? %>
     <p></p>
     <%else%>
     <% @posts.all[5..-1].each do |post| %>
