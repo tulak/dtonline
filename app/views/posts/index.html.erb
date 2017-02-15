@@ -1,4 +1,7 @@
 <div class="container">
+  <%if @posts.nil? %>
+  <p>Nic na zobrazenie</p>
+  <%else%>
   <div class="title">
     <%first_five%>
     <% post = @show.first %>
@@ -14,6 +17,9 @@
 
      </div>
      <div class="boxcase">
+       <% if @show.all[1..-1].nil? %>
+       <p></p>
+       <%else%>
        <% @show = @show.all[1..-1] %>
      <% @show.each do |post| %>
       <div class="box">
@@ -21,11 +27,19 @@
         <h4><%= link_to post.title, post_path(post) %></h4>
       </div>
       <%end%>
+      <%end%>
   </div>
 </div>
 <hr>
   <div class="col-xs-12 col-md-8 ">
+
+
+    <% if @posts.all[5..-1].nil? %>
+    <p></p>
+    <%else%>
     <% @posts.all[5..-1].each do |post| %>
+
+
     <div class="article">
       <div class="text-left">
         <%= link_to image_tag(post.image.url, :align => "left"), post_path(post) %>
@@ -41,6 +55,7 @@
         <%= link_to "Upravit", edit_post_path(post), class: "btn btn-default" %>
         <%= link_to "Zmazat", post_path(post), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
       <% end %>
+      <%end%>
 
     </div>
     <hr>
@@ -51,4 +66,5 @@
   <div class="col-xs-6 col-md-4">
     <%= render "layouts/category_box"%>
   </div>
+  <%end%>
 </div>
