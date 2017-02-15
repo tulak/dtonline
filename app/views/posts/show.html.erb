@@ -1,0 +1,44 @@
+<% title @post.title %>
+<% meta_tag :description, @post.desc %>
+<% meta_tag :keywords, @post.keywords %>
+<div class="container">
+<div class="col-xs-12 col-md-8 ">
+<div class=" blog-content">
+  <h1 class="text-center"><%= @post.title %></h1>
+  <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
+  <h4 class="perex"><%= @post.perex %></h4>
+  <%= image_tag @post.image.url %>
+  <div><%= raw @post.body %></div>
+</div>
+<% if admin_signed_in? %>
+  <%= link_to "Upravit", edit_post_path, class: "btn btn-default" %>
+  <%= link_to "Zmazat", post_path, class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+<% end %>
+</div>
+
+<div class="col-xs-6 col-md-4">
+  <div class="reklama">
+      <%= image_tag("slovaktual.jpg") %>
+  </div>
+
+  <div class="category_box">
+    <h4>Viac v tejto kategórii</h4>
+    <hr>
+    <%find_vsetko%>
+    <% @result = @result.all[1..-1] %>
+    <% @result.each do |post| %>
+    <%= link_to post.title, post_path(post)%>
+    <hr>
+    <%end%>
+  </div>
+
+    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDTonline.sk%2F&tabs&width=450&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1645360119052120" width="450" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  <div class="reklama">
+      <%= image_tag("oaza.png") %>
+  </div>
+
+
+
+
+</div>
+</div>

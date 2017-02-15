@@ -1,0 +1,7 @@
+<% @categories.each do |category| %>
+    <h2><%= category.name %></h2>
+      <% if admin_signed_in? %>
+      <%= link_to "Zobrazit", category_path(category), class: "btn btn-primary" %>
+      <%= link_to "Zmazat", category_path(category), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+      <%end%>
+<%end%>

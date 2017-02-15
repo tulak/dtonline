@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Dtonline<%= if content_for?(:title) then  ' | ' + yield(:title) end %>
+  </title>
+    <%= csrf_meta_tags %>
+    <meta name='description'
+      content='<%= yield_meta_tag(:description, 'Najstarsi nezavisly regionalny portal') %>' />
+    <meta name='keywords'
+      content='<%= yield_meta_tag(:keywords, 'Detva,Podpolanie,spravy,novinky,spravodajstvo') %>' />
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body>
+
+    <%= render "layouts/header" %>
+    <%= render "layouts/navigation" %>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+
+
+  </body>
+</html>
