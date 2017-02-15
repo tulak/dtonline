@@ -7,7 +7,7 @@
   <h1 class="text-center"><%= @post.title %></h1>
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
   <h4 class="perex"><%= @post.perex %></h4>
-  <%= image_tag @post.image.url %>
+  <%= if @post.image.present? then image_tag @post.image.url end%>
   <div><%= raw @post.body %></div>
 </div>
 <% if admin_signed_in? %>
