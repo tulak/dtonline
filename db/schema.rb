@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210153124) do
+ActiveRecord::Schema.define(version: 20170215234900) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -52,11 +52,11 @@ ActiveRecord::Schema.define(version: 20170210153124) do
     t.text     "body"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "category_id"
     t.string   "perex"
     t.string   "desc"
     t.         "keywords"
     t.string   "image"
+    t.integer  "category_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
   end
 
