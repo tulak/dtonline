@@ -1,8 +1,9 @@
+<h2>Vytvoriť kategóriu</h2>
 <%= simple_form_for @category do |f| %>
   <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= "#{pluralize(@category.errors.count, "error")} zabranili tomuto clanku k ulozeniu:" %>
+        Chyba
       </h2>
       <ul>
         <% @category.errors.full_messages.each do |msg| %>
@@ -21,6 +22,6 @@
 
 
   <div class="form-group">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Vytvoriť'%>
   </div>
 <% end %>

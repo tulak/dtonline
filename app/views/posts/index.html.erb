@@ -1,6 +1,6 @@
 <div class="container">
   <%if @posts.empty? %>
-  <p>Nic na zobrazenie</p>
+  <p>Nič na zobrazenie</p>
   <%else%>
   <div class="title">
     <%first_five%>
@@ -9,10 +9,14 @@
       <div class="top-post">
           <%= if post.image.present? then link_to image_tag(post.image.url, :align => "left"), post_path(post) end %>
           <div class="text">
-          <%= link_to post.title, post_path(post) %><br>
+          <p><%= link_to post.title, post_path(post) %></p>
           <h5><%= post.created_at.strftime('%b %d, %Y') %></h5>
           <h5><%= link_to post.category.try(:name), category_path(post.category) %></h5>
           <h4><%= post.desc %></h4>
+          <% if admin_signed_in? %>
+            <%= link_to "Upraviť", edit_post_path(post), class: "btn btn-default" %>
+            <%= link_to "Zmazať", post_path(post), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+          <% end %>
         </div>
 
      </div>
@@ -25,7 +29,12 @@
       <div class="box">
         <%= if post.image.present? then link_to image_tag(post.image.url, :align => "left"), post_path(post) end %>
         <h4><%= link_to post.title, post_path(post) %></h4>
+        <% if admin_signed_in? %>
+          <%= link_to "Upraviť", edit_post_path(post), class: "btn btn-default" %>
+          <%= link_to "Zmazať", post_path(post), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+        <% end %>
       </div>
+      
       <%end%>
       <%end%>
   </div>
@@ -51,9 +60,8 @@
       </div>
 
       <% if admin_signed_in? %>
-        <%= link_to "Zobrazit", post_path(post), class: "btn btn-primary" %>
-        <%= link_to "Upravit", edit_post_path(post), class: "btn btn-default" %>
-        <%= link_to "Zmazat", post_path(post), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+        <%= link_to "Upraviť", edit_post_path(post), class: "btn btn-default" %>
+        <%= link_to "Zmazať", post_path(post), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
       <% end %>
       <%end%>
 

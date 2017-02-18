@@ -1,8 +1,9 @@
+
 <%= simple_form_for @post do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= "#{pluralize(@post.errors.count, "error")} zabranili tomuto clanku k ulozeniu:" %>
+        <%= "#{pluralize(@post.errors.count, "Chyby")} zabránili tomuto článku k uloženiu:" %>
       </h2>
       <ul>
         <% @post.errors.full_messages.each do |msg| %>
@@ -43,6 +44,6 @@
  <%= f.select :category_id, Category.all.collect {|c| [c.name, c.id]} %>
 
   <div class="form-group">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Uverejniť' %>
   </div>
 <% end %>
