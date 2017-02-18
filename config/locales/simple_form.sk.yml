@@ -1,0 +1,15 @@
+sk:
+ simple_form:
+  labels:
+    defaults:
+     title: 'Titulka'
+     desc: 'Popis'
+     keywords: 'Kľúčové slová'
+     image: 'Obrázok'
+     body: 'Obsah'
+     name: 'Meno'
+     password_confirmation: 'Potvrdiť heslo'
+     password: 'Heslo'
+     current_password: 'Aktuálne heslo'
+     side: 'Umiestniť do pravého panelu na hlavnú stránku?'
+     position: 'Pozícia v hornom menu'

@@ -23,6 +23,20 @@ class CategoriesController < ApplicationController
     @posts = @category.posts.paginate(page:params[:page], per_page: 10)
   end
 
+  def edit
+    find_category
+  end
+
+  # Update updatuje prispevok s novymi udajmi
+  def update
+    find_category
+    if @category.update_attributes(category_params)
+      redirect_to categories_path 
+    else
+      render :edit
+    end
+  end
+
   def destroy
     find_category
     if   @category.destroy
@@ -32,7 +46,7 @@ class CategoriesController < ApplicationController
   end
  private
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :side, :position)
   end
 
   def find_category

@@ -1,36 +1,27 @@
-<div class="category_box">
-  <h4>Rozhovor</h4>
-  <hr>
-  <%find_rozhovor%>
-  <% @rozhovor.each do |post| %>
-  <%= link_to post.title, post_path(post)%>
-  <hr>
-  <%end%>
-</div>
+<% find_side %>
+<% if @side.empty? %>
 <div class="reklama">
     <%= image_tag("oaza.png") %>
-</div>
-<div class="category_box">
-  <h4>Región</h4>
-  <hr>
-  <%find_region%>
-  <% @region.each do |post| %>
-  <%= link_to post.title, post_path(post)%>
-  <hr>
-  <%end%>
 </div>
 <div class="reklama">
     <%= image_tag("slovaktual.jpg") %>
 </div>
+<%else%>
+<% @side.each do |side| %>
 <div class="category_box">
-  <h4>Šport</h4>
+
+ <h4><%= side.name %></h4>
   <hr>
-  <%find_sport%>
-  <% @sport.each do |post| %>
+  <% side.posts.each do |post| %>
   <%= link_to post.title, post_path(post)%>
   <hr>
+
   <%end%>
-</div>
-<div class="reklama">
-  <%= image_tag("oaza.png") %>
-</div>
+  </div>
+  <div class="reklama">
+      <%= image_tag("slovaktual.jpg") %>
+  </div>
+  <%end%>
+
+
+  <%end%>

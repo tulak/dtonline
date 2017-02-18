@@ -21,20 +21,3 @@
 
 en:
   hello: "Hello world"
-  activerecord:
-   errors:
-       models:
-         post:
-           attributes:
-             title:
-               blank: "nemôže byť prázdna"
-             desc:
-               blank: "nemôže byť prázdny"
-             perex:
-               blank: "nemôže byť prázdny"
-             body:
-               blank: "nemôže byť prázdny"
-         category:
-            attributes:
-              name:
-                blank: "nemôže byť prázdne"
