@@ -1,8 +1,18 @@
+<table style="width:100%" >
+  <tr>
+    <th>Meno</th>
+    <th>Pozicia v menu</th>
+    <th>Sidebar</th>
+  </tr>
 <% @categories.each do |category| %>
-    <h2><%= category.name %></h2>
+ <tr>
+    <td><h4><%= category.name %></h4></td>
+    <td><%= category.position %></p></td>
+    <td><%= category.side %></p></td>
       <% if admin_signed_in? %>
-      <%= link_to "Upraviť", edit_category_path(category), class: "btn btn-default" %>
-      <%= link_to "Zobraziť", category_path(category), class: "btn btn-primary" %>
-      <%= link_to "Zmazať", category_path(category), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %>
+    <td><%= link_to "Upraviť", edit_category_path(category), class: "btn btn-default" %>
+      <%= link_to "Zmazať", category_path(category), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %></td>
       <%end%>
+      </tr>
 <%end%>
+</table>
