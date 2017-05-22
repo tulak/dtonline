@@ -1,0 +1,2 @@
+class Smallbanner < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class SmallbannersController < ApplicationController
+end
