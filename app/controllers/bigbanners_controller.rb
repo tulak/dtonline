@@ -20,7 +20,7 @@ class BigbannersController < ApplicationController
   end
 
   def destroy
-    find_post
+    find_bigbanner
     if @bigbanner.destroy
       redirect_to bigbanners_path
     else
