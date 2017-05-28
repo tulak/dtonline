@@ -1,0 +1,33 @@
+<h1>Veľké bannery</h1>
+<%= link_to 'Pridať veľký banner', new_bigbanner_path,  class: "btn btn-success" %>
+<%if @bigbanners.empty? %>
+<p>Nič na zobrazenie</p>
+<%else%>
+<table style="width:100%" >
+  <tr>
+<%@bigbanners.each do|bigbanner| %>
+  <td><%=  image_tag bigbanner.image.url %></td>
+  <td><%= link_to "Zmazať", bigbanner_path(bigbanner), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %></td>
+</tr>
+</table>
+<%end%>
+<%end%>
+
+
+<h1>Malé bannery</h1>
+<%all_small%>
+<%= link_to 'Pridať malý banner', new_smallbanner_path,  class: "btn btn-success" %>
+<%if @smallbanners.empty? %>
+<p>Nič na zobrazenie</p>
+<%else%>
+<table style="width:100%" >
+
+<%@smallbanners.each do|smallbanner| %>
+  <tr>
+  <td><%= image_tag smallbanner.image.url %></td>
+  <td><%= link_to "Zmazať", smallbanner_path(smallbanner), class: "btn btn-danger", data: {:confirm => "Ste si isty?"}, method: :delete %></td>
+</tr>
+</table>
+
+<%end%>
+<%end%>

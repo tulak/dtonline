@@ -9,6 +9,7 @@
   <h4 class="perex"><%= @post.perex %></h4>
   <%= if @post.image.present? then image_tag @post.image.url end%>
   <div><%= raw @post.body %></div>
+  <%= render "layouts/reklama" %>
 </div>
 <% if admin_signed_in? %>
   <%= link_to "Upraviť", edit_post_path, class: "btn btn-default" %>
@@ -17,9 +18,7 @@
 </div>
 
 <div class="col-xs-6 col-md-4">
-  <div class="reklama">
-      <%= image_tag("slovaktual.jpg") %>
-  </div>
+  <%= render "layouts/reklama" %>
 
   <div class="category_box">
     <h4>Viac v tejto kategórii</h4>
@@ -33,10 +32,7 @@
   </div>
 
   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDTonline.sk%2F&tabs&width=320&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1645360119052120" width="320" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-  <div class="reklama">
-      <%= image_tag("oaza.png") %>
-  </div>
-
+  <%= render "layouts/reklama" %>
 
 
 

@@ -22,12 +22,13 @@
       <ul class="nav navbar-nav ">
 
 
-          <li><%= link_to 'Nová kategória', new_category_path %></li>
+
           <li><%= link_to 'Nový článok', new_post_path %></li>
+          <li><%= link_to 'Kategórie', categories_path %></li>
+          <li><%= link_to 'Reklamy', bigbanners_path  %></li>
           <li><%= link_to 'Účet', edit_admin_registration_path  %></li>
           <li><%= link_to 'Odhlásiť', destroy_admin_session_path, :method => :delete %></li>
-          <li><%= link_to 'Kategórie', categories_path %></li>
-        
+
       </ul>
     </div>
     <% else %>

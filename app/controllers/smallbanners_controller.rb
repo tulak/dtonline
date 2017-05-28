@@ -1,4 +1,7 @@
 class SmallbannersController < ApplicationController
+
+  before_action :authenticate_admin!
+
   def index
     @smallbanners = Smallbanner.all
   end
@@ -10,7 +13,7 @@ class SmallbannersController < ApplicationController
   def create
     @smallbanner = Smallbanner.new(smallbanner_params)
     if @smallbanner.save
-      redirect_to smallbanner_path(@smallbanner)
+      redirect_to bigbanners_path
     else
       render :new
     end
@@ -22,7 +25,7 @@ class SmallbannersController < ApplicationController
   def destroy
     find_smallbanner
     if @smallbanner.destroy
-      redirect_to smallbanners_path
+      redirect_to bigbanners_path
     else
     end
   end

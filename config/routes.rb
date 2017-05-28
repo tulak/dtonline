@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root to: "posts#index"
 
-  resources :categories 
+  resources :categories
   resources :posts
+  resources :bigbanners
+  resources :smallbanners
 
   devise_scope :admin do
   get '/admin' => 'devise/sessions#new'

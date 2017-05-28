@@ -1,11 +1,7 @@
 <% find_side %>
 <% if @side.empty? %>
-<div class="reklama">
-    <%= image_tag("oaza.png") %>
-</div>
-<div class="reklama">
-    <%= image_tag("slovaktual.jpg") %>
-</div>
+<%= render "layouts/reklama" %>
+<%= render "layouts/reklama" %>
 <%else%>
 <% @side.each do |side| %>
 <div class="category_box">
@@ -18,9 +14,7 @@
 
   <%end%>
   </div>
-  <div class="reklama">
-      <%= image_tag("slovaktual.jpg") %>
-  </div>
+  <%= render "layouts/reklama" %>
   <%end%>
 
 

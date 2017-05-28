@@ -1,0 +1,8 @@
+<div class="reklama">
+    <%small%>
+    <%if @smallbanner.nil? %>
+    <p>Pridajte malý banner</p>
+    <%else%>
+   <%=  image_tag(@smallbanner.image.url, :alt => "smallbanner")%>
+   <%end%>
+</div>

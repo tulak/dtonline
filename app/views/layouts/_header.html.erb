@@ -1,4 +1,9 @@
 <div class="page-header">
-    <%=  image_tag("nuo.png", :alt => "nuo" ,:class => "nuo")%>
+     <%big%>
+     <%if @bigbanner.nil? %>
+     <p>Pridajte veľký banner</p>
+     <%else%>
+    <%=  image_tag(@bigbanner.image.url, :alt => "bigbanner" ,:class => "nuo")%>
     <%= link_to image_tag("logo.jpg", :alt => "logo" ,:class => "logo"), root_path %>
+    <%end%>
 </div>

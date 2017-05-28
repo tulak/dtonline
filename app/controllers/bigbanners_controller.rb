@@ -1,4 +1,6 @@
 class BigbannersController < ApplicationController
+  before_action :authenticate_admin!
+  
   def index
     @bigbanners = Bigbanner.all
   end
@@ -10,7 +12,7 @@ class BigbannersController < ApplicationController
   def create
     @bigbanner = Bigbanner.new(bigbanner_params)
     if @bigbanner.save
-      redirect_to bigbanner_path(@bigbanner)
+      redirect_to bigbanners_path
     else
       render :new
     end
