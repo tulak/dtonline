@@ -1,9 +1,11 @@
 class BigbannersController < ApplicationController
   before_action :authenticate_admin!
-  
+
   def index
     @bigbanners = Bigbanner.all
+      @smallbanners = Smallbanner.all
   end
+
 
   def new
     @bigbanner = Bigbanner.new

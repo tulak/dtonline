@@ -28,13 +28,19 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
+  before :cache, :capture_size_before_cache
+  def capture_size_before_cache(new_file)
+    if model.image_width.nil? || model.image_height.nil?
+      model.image_width, model.image_height = `identify -format "%wx %h" #{new_file.path}`.split(/x/).map { |dim| dim.to_i }
+      end
+end
 
   # Create different versions of your uploaded files:
   version :thumb do
     process resize_to_fit: [200, 150]
    end
 
-  
+
 
 
 

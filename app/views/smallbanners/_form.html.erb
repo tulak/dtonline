@@ -1,5 +1,20 @@
 <%= simple_form_for @smallbanner do |f| %>
 
+  <% if @smallbanner.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= "#{pluralize(@smallbanner.errors.count, "Chyby")} zabránili tomuto obrázku k uloženiu:" %>
+      </h2>
+      <ul>
+        <% @smallbanner.errors.full_messages.each do |msg| %>
+          <li>
+            <%= msg %>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <div class="form-group">
   <%= f.label :image %><br>
   <%= f.file_field :image %>
