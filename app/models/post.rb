@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  attr_accessor :image_width, :image_height
   mount_uploader :image, ImageUploader
   belongs_to :category
   validates :title, presence: true, length: {maximum: 140}
