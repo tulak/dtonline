@@ -60,7 +60,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :image, :body,:perex,:desc,:category_id,:keywords)
+    params.require(:post).permit(:title, :image, :body,:perex,:desc,{category_ids: []},:keywords)
   end
 
   def find_post
