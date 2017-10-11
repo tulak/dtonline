@@ -12,6 +12,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="path/to/lightbox.css" rel="stylesheet">
 
   </head>
 
@@ -26,6 +27,6 @@
 
 
   <%= render "layouts/footer" %>
-
+  <%= javascript_include_tag "footer" %>
   </body>
 </html>

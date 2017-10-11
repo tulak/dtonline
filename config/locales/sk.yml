@@ -1,4 +1,9 @@
 sk:
+  time:
+     formats:
+       default: "%d/%m/%Y"
+       short: "%b %d"
+       long: "%B %d, %Y"
   activerecord:
      errors:
        models:
