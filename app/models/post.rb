@@ -15,4 +15,12 @@ class Post < ApplicationRecord
        errors.add(:categories, "zadajte aspon jendu ketegoriu")
      end
    end
+
+   def self.search(search)
+     if search
+       where('title LIKE ? OR perex LIKE ? OR body LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%")
+     else
+       all
+     end
+   end
  end

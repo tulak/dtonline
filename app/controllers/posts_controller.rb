@@ -8,7 +8,8 @@ class PostsController < ApplicationController
 
     if
         params[:category].blank?
-        @posts = Post.all.limit(11)
+        @posts = Post.search(params[:search]).limit(25)
+        #@posts = Post.all.limit(11)
 
 else
           @category_id = Category.find_by(name: params[:category]).id
@@ -60,7 +61,7 @@ end
   private
 
   def post_params
-    params.require(:post).permit(:title, :image, :body,:perex,:desc,{category_ids: []},:keywords)
+    params.require(:post).permit(:title, :image, :body,:perex,:desc,{category_ids: []},:keywords, :search)
   end
 
   def find_post

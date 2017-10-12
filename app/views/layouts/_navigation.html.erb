@@ -1,3 +1,9 @@
+<div class="search_form">
+<%= form_tag(posts_path, method: :get) do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag 'Hľadať', name: nil %>
+<% end %>
+</div>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
