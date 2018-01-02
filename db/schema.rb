@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20171009150132) do
   create_table "categories_posts", id: false, force: :cascade do |t|
     t.integer "category_id", null: false
     t.integer "post_id",     null: false
+    t.index ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
+    t.index ["post_id", "category_id"], name: "index_categories_posts_on_post_id_and_category_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -67,7 +69,7 @@ ActiveRecord::Schema.define(version: 20171009150132) do
     t.datetime "updated_at", null: false
     t.string   "perex"
     t.string   "desc"
-    t.         "keywords"
+    t.string   "keywords"
     t.string   "image"
   end
 

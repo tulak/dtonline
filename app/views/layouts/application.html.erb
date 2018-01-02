@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>
-    Dtonline<%=  ' | ' + yield(:title) if content_for?(:title) %>
+    Tvoje Podpoľanie<%=  ' | ' + yield(:title) if content_for?(:title) %>
   </title>
     <%= csrf_meta_tags %>
     <meta name='description'
@@ -17,10 +17,12 @@
   </head>
 
   <body>
+
+    <%= render "layouts/header" %>
+    <%= render "layouts/navigation" %>
     <div class="content">
 
-      <%= render "layouts/header" %>
-      <%= render "layouts/navigation" %>
+
 
     <%= yield %>
   </div>
