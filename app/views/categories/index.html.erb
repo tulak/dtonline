@@ -1,3 +1,4 @@
+<% if admin_signed_in? %>
 <%= link_to 'Nová kategória', new_category_path,  class: "btn btn-success" %>
 <table style="width:100%" >
   <tr>
@@ -17,4 +18,5 @@
       </tr>
 <%end%>
 </table>
+<% end %>
   
