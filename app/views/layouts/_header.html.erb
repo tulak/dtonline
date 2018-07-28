@@ -1,9 +1,4 @@
 <div class="page-header">
-     <%big%>
-     <%if @bigbanner.nil? %>
-     <p>Pridajte veľký banner</p>
-     <%else%>
     <%=  image_tag("polana", :alt => "header" ,:class => "nuo")%>
-    <%end%>
     <%= link_to image_tag("logo.png", :alt => "logo" ,:class => "logo"), root_path, { :class=>"log" }%>
 </div>

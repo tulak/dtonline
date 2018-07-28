@@ -3,9 +3,9 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_and_belongs_to_many :categories
   validates :title, presence: true, length: {maximum: 140}
-  validates :body, presence: true
-  validates :perex, presence: true
-  validates :desc, presence: true
+  validates :body, presence: true 
+  validates :perex, presence: true, length: {maximum: 255}
+  validates :desc, presence: true, length: {maximum: 225}
   validate :has_one_category_at_least
   default_scope { order(created_at: :desc) }
 
