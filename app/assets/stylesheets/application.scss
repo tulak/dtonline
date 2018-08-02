@@ -89,11 +89,15 @@
 
  }
 
+ .navbar-header{
+  background-color: #09652e;
+ }
+
  .navbar .navbar-collapse {
    text-align: center;
-   background-color: #09652e;
    font-size: 25px;
    text-align: center;
+   background-color: #09652e;
 
    li a {
      color:white;
@@ -106,7 +110,10 @@
    }
  }
 
-
+button{
+  position: absolute;
+  right:75%;
+}
 
  .container-fluid{
    width: 100%;
@@ -337,7 +344,9 @@ form{
   }
 }
 @media (max-width: 1000px){
-  
+  .page-header{
+    height:250px;
+  }
   .content{
     width: 100%;
   }
@@ -358,6 +367,7 @@ form{
    }
 }
 @media (max-width: 800px){
+
   
   .top-post{
     padding-right: 0;
@@ -401,9 +411,18 @@ form{
 
 
 @media (max-width: 550px){
+.navbar-header{
+    width: 104%;
+  }
+  
 
   .page-header{
-    height: 190px;
+    height: 180px;
+  }
+
+  button{
+    position: absolute;
+    right: 80%;
   }
 
   .logo{
@@ -467,6 +486,10 @@ form{
 
 }
 @media (max-width: 400px){
+
+  .navbar-header{
+    width: 104%;
+  }
 .page-header{
     height: 140px;
   }
@@ -475,4 +498,19 @@ form{
     width: 100px;
   }
 
+
 }
+
+@media (max-width: 350px){
+
+.navbar-header{
+    width: 105%;
+  }
+
+button{
+  position: absolute;
+  right: 75%;
+}
+}
+
+

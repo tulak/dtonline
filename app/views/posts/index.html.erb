@@ -79,3 +79,14 @@
   <% end %>
 
 </div>
+<div class="search_resp">
+<%= form_tag(posts_path, method: :get, class: 'input-group stylish-input-group') do %>
+  <%= text_field_tag :search, params[:search], class: 'form-control' , placeholder: 'Hľadať' %>
+   <span class="input-group-addon">
+  <%= button_tag(type: 'submit') do %>
+ <span class="glyphicon glyphicon-search"></span>
+<% end %>
+</span>
+<% end %>
+</div>
+
