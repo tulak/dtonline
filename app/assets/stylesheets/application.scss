@@ -337,12 +337,7 @@ form{
   }
 }
 @media (max-width: 1000px){
-  .page-header{
-    height: 300px;
-  }
-
-  .logo{
-  }
+  
   .content{
     width: 100%;
   }
@@ -363,13 +358,7 @@ form{
    }
 }
 @media (max-width: 800px){
-  .page-header{
-    height: 200px;
-  }
-
-  .logo{
-    max-width: 10em;
-  }
+  
   .top-post{
     padding-right: 0;
     padding-bottom: 4%;
@@ -412,15 +401,15 @@ form{
 
 
 @media (max-width: 550px){
-  .page-header{
-    background: none;
-  }
-  .logo{
-    max-width: 17em;
-    right:150px;
 
+  .page-header{
+    height: 190px;
   }
-  .container{
+
+  .logo{
+    width: 130px;
+  }
+   .container{
     h2{
       font-size: 35px;
     }
@@ -475,5 +464,15 @@ form{
     display: none;
   }
 
+
+}
+@media (max-width: 400px){
+.page-header{
+    height: 140px;
+  }
+
+  .logo{
+    width: 100px;
+  }
 
 }
