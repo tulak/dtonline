@@ -10,6 +10,10 @@ class Post < ApplicationRecord
   default_scope { order(created_at: :desc) }
 
 
+def to_param
+  "#{id}-#{title.parameterize.downcase}"
+end
+
   def has_one_category_at_least
      if categories.empty?
        errors.add(:categories, "zadajte aspon jendu ketegoriu")

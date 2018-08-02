@@ -19,11 +19,22 @@
 
   }
 }
-.perex {
+
+  .perex {
   color: #09652e;
-  text-align: center;
+  text-align: justify;
   font-weight: bold;
   padding: 10px;
+  font-size: 22px;
+}
+
+
+.post-content{
+  text-align: justify;
+}
+
+.post-content p{
+  font-size: 17px;
 }
 
 @media (max-width: 550px){

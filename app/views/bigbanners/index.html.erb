@@ -1,3 +1,4 @@
+<% if admin_signed_in? %>
 <h1>Veľké bannery</h1>
 <%= link_to 'Pridať veľký banner', new_bigbanner_path,  class: "btn btn-success" %>
 <%if @bigbanners.empty? %>
@@ -30,3 +31,4 @@
 
 <%end%>
 <%end%>
+<% end %>

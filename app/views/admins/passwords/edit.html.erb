@@ -1,3 +1,4 @@
+<% if admin_signed_in? %>
 <h2>Change your password</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
@@ -17,3 +18,4 @@
 <% end %>
 
 <%= render "admins/shared/links" %>
+<% end %>

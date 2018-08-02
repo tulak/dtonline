@@ -8,7 +8,7 @@
   <h5 class="text-center"><%= @post.created_at.strftime('%b %d, %Y') %></h5>
   <h4 class="perex"><%= @post.perex %></h4>
   <%= image_tag @post.image.url if @post.image.present?%>
-  <div><%= raw @post.body %></div>
+  <div class="post-content"><%= raw @post.body %></div>
   <%= render "layouts/reklama" %>
 </div>
 <% if admin_signed_in? %>
@@ -22,7 +22,7 @@
   <%= render "layouts/reklama" %>
 
 
-  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FDTonline.sk%2F&tabs&width=320&height=214&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1645360119052120" width="320" height="214" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+  <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FTvojePodpolanie%2F&tabs&width=340&height=180&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1645360119052120" width="340" height="180" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
   <%= render "layouts/reklama" %>
 
 
